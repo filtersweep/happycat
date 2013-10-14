@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>It's happycat.</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/app.css">
+	<script src="js/libs/jquery.1.10.2.min.js"></script>
+	<script src="js/libs/bootstrap.min.js"></script>
+	<script src="js/classes.js"></script>
+	<script src="js/app.js"></script>
+</head>
+<body>
+	<header>
+		<h1 id="instructions">Please pet happycat.</h1>
+		<h3>She is <span id="score_descriptor">bored<span>.</h3>
+	</header>
+	<section>
+		<div class="modal fade" id="name_gather_modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<button type="button" class="close btn-danger" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4>Hi! What's your name?</H4>
+						<input type="text" id="name_input" placeholder="Hello. My name is..." class="form-control">
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="name_accept_button" class="btn btn-primary disabled">Thanks!</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<button id="reset_button" type="button" class="btn btn-primary">Reset</button>
+		<div class="pull-right">
+			<button id="pause_button" type="button" class="btn btn-primary disabled" data-toggle="button">Pause</button>
+		</div>
+	</footer>
+	<div class="hidden">
+		<div id="surface_template" class="click_surface">
+			<img src="images/happycat.gif" alt="Click the happy cat.">
+		</div>
+		<div id="meow_sound_effects">
+			<audio preload><source src="audio/meow.mp3" type="audio/mp3"></audio>
+			<audio preload><source src="audio/meow1.mp3" type="audio/mp3"></audio>
+			<audio preload><source src="audio/meow2.mp3" type="audio/mp3"></audio>
+			<audio preload><source src="audio/meow3.mp3" type="audio/mp3"></audio>
+			<audio preload><source src="audio/meow4.mp3" type="audio/mp3"></audio>
+		</div>
+	</div>
+</body>
+</html>

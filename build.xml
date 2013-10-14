@@ -1,0 +1,31 @@
+<project name="happycat" basedir="." default="main">
+  <property name="jsdoc" value="/Users/bburke/Source/Tools/jsdoc-master/jsdoc" />
+  <property name="jslint" value="/usr/local/bin/jslint" />
+  <property name="startjstestdriver" value="/Users/bburke/Source/Tools/js-test-driver/start" />
+  <property name="jstestdriver" value="/Users/bburke/Source/Tools/js-test-driver/test" />
+
+  <property name="doc_dir" value="./doc" />
+  <property name="src_dir" value="./src" />
+  <property name="test_dir" value="./test" />
+
+  <target name="lint">
+	<exec executable="${jslint}">
+	  <arg line="${src_dir}/js/app.js" />
+	  <arg line="${src_dir}/js/classes.js" />
+	</exec>
+  </target>
+
+  <target name="docs">
+	<exec executable="${jsdoc}">
+	  <arg line="${src_dir}/js" />
+	  <arg line="--destination ${doc_dir}" />
+	</exec>
+  </target>
+
+  <target name="test">
+	<exec executable="${startjstestdriver}" spawn="true" />
+	<exec executable="${jstestdriver}" />
+  </target>
+
+  <target name="main" depends="lint, docs, test" />
+</project>
