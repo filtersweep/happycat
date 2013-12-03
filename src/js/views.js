@@ -12,7 +12,7 @@ define(
 				var self = this;
 
 				this.rawSamples = new Models.SampleBank();
-				this.sampleWidgets = [],
+				this.sampleWidgets = [];
 				this.template = _.template(dependencies.$sampleTemplate.html());
 				this.rawSamples.fetch({
 					success: function (collection, response, options) {

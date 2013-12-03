@@ -12,6 +12,9 @@
 	<exec executable="${jslint}">
 	  <arg line="${src_dir}/js/app.js" />
 	  <arg line="${src_dir}/js/classes.js" />
+	  <arg line="${src_dir}/js/dependencies.js" />
+	  <arg line="${src_dir}/js/models.js" />
+	  <arg line="${src_dir}/js/views.js" />
 	</exec>
   </target>
 

@@ -1,6 +1,6 @@
 "use strict";
 
-/*global require:false, window:false*/
+/*global require:false, document:false*/
 
 require.config({
 	paths: {

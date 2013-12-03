@@ -2,7 +2,7 @@
 
 /*global define:false*/
 
-define( 
+define(
 	["backbone", "underscore", "dependencies"],
 	function (Backbone, _, dependencies) {
 		var SoundEffect = null,
