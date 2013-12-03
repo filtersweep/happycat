@@ -5,11 +5,20 @@
 require.config({
 	paths: {
 		"jquery": "//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min",
-		"bootstrap": "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min"
+		"bootstrap": "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min",
+		"underscore": "//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min",
+		"backbone": "//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min"
 	},
 	shim: {
 		"bootstrap": {
 			deps: ["jquery"]
+		},
+		"underscore": {
+			exports: "_"
+		},
+		"backbone": {
+			deps: ["underscore", "jquery"],
+			exports: "Backbone"
 		}
 	}
 });

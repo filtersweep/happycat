@@ -3,15 +3,14 @@
 /*global define:false, $:false, window:false*/
 
 define(
-	["jquery", "bootstrap"],
-	function ($, bootstrap) {
+	["jquery", "bootstrap", "views"],
+	function ($, bootstrap, Views) {
 		/**
 		 * @file Game classes used to build the happycat game.
 		 * @author Beau Burke <beau@filterswept.com>
 		 * @see HappycatGame
 		 * @see Player
 		 * @see Surface
-		 * @see Sampler
 		 */
 
 		/**
@@ -231,44 +230,17 @@ define(
 		};
 
 		/**
-		 * Simple utility used to trigger sounds.  The $container object can be any element which contains <audio> elements in any structure.  Each sound to trigger should have it's own <audio> element.
-		 * @param {jQuery} $container - Bundle of audio elements used to trigger sounds.
-		 * @constructor
-		 */
-
-		function Sampler($container) {
-			this.$samples = $container.find("audio");
-		}
-
-		/**
-		 * Plays a random sound, selected from the list of supplied <audio> elements.
-		 */
-
-		Sampler.prototype.playRandom = function () {
-			var index = 0;
-
-			if (this.$samples.length > 0) {
-				index = Math.floor(Math.random() * this.$samples.length);
-
-				if (this.$samples[index].play) {
-					this.$samples[index].play();
-				}
-			}
-		};
-
-		/**
 		 * Encapsulates all the data and rules used to play the Happycat game.
 		 * @constructor
 		 * @param {jQuery} $surfaceTemplate - Element used to display Surface objects.
-		 * @param {jQuery} $soundEffects - Element used to build audio sample list.
 		 */
 
-		function HappycatGame($surfaceTemplate, $soundEffects) {
+		function HappycatGame($surfaceTemplate) {
 			var game = this;
 
 			this.$surfaceTemplate = $surfaceTemplate;
 			this.player = new Player();
-			this.soundEffects = new Sampler($soundEffects);
+			this.soundEffects = new Views.Sampler();
 			this.field = {
 				w: $(window).width(),
 				h: $(window).height()
@@ -423,7 +395,6 @@ define(
 
 		HappycatGame.Surface = Surface;
 		HappycatGame.Player = Player;
-		HappycatGame.Sampler = Sampler;
 
 		return {
 			HappycatGame: HappycatGame

@@ -37,14 +37,11 @@
 		<div id="surface_template" class="click_surface">
 			<img src="images/happycat.gif" alt="Click the happy cat.">
 		</div>
-		<div id="meow_sound_effects">
-			<audio preload><source src="audio/meow.mp3" type="audio/mp3"></audio>
-			<audio preload><source src="audio/meow1.mp3" type="audio/mp3"></audio>
-			<audio preload><source src="audio/meow2.mp3" type="audio/mp3"></audio>
-			<audio preload><source src="audio/meow3.mp3" type="audio/mp3"></audio>
-			<audio preload><source src="audio/meow4.mp3" type="audio/mp3"></audio>
-		</div>
+		<div id="meow_sound_effects"></div>
 	</div>
+	<script id="meow_sound_effect_template" type="text/html">
+		<audio preload><source src="<%= src %>" type="<%= type %>"></audio>
+	</script>
 	<script data-main="js/app" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.8/require.min.js"></script>
 </body>
 </html>
